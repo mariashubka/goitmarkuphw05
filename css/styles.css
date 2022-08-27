@@ -207,12 +207,12 @@ color: var(--accent-color);
 color: var(--accent-color);
 }
 
-.header-contact-email:hover .contact-list-icon,
+/* .header-contact-email:hover .contact-list-icon,
 .header-contact-email:focus .contact-list-icon,
 .header-contact-phone:hover .contact-list-icon,
 .header-contact-phone:focus .contact-list-icon {
 fill:  var(--accent-color);;
-}
+} */
 
 /* ================  HEADER  ================ */
 
@@ -473,6 +473,7 @@ color: var(--primary-text-color);
 
 .customers-icon-item {
   fill: #AFB1B8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:hover,
@@ -480,9 +481,15 @@ color: var(--primary-text-color);
   border: 1px solid var(--accent-color);
 }
 
+.customers-icon-item:hover,
+.customers-icon-item:focus {
+  fill: var(--accent-color);
+}
+
 .customers-link:hover svg,
 .customers-link:focus svg {
   fill: var(--accent-color);
+  
 }
 /* ============ CLIETS ============ */
 
@@ -601,13 +608,14 @@ margin-bottom: 9px;
     padding-bottom: 6px;
     padding-top: 6px;
     border: none;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
 .button:hover,.button:focus {
     color: var(--white-color);
     background-color: #2196F3;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .suptitle-portfolio {
@@ -652,25 +660,25 @@ margin-bottom: 9px;
   padding-right: 24px;
 }
 
-.work-example-item:hover,
-.work-example-item:focus {
+.work-example-item-link:hover,
+.work-example-item-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16)
-}
-
-.work-example-item {
-position: relative;
-transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .work-example-wrapper {
   position: relative;
   overflow: hidden;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.work-example-wrapper:hover .overlay,
-.work-example-wrapper:focus .overlay {
+.work-example-item-link:hover .overlay,
+.work-example-item-link:focus .overlay {
 transform: translate(0,0);
+}
+
+.work-example-item-link {
+  display: block;
+  position: relative;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .overlay {
@@ -681,7 +689,7 @@ transform: translate(0,0);
   height: 100%;
   overflow-y: auto;
   transform: translate(0, 100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 18px;
   line-height: 28px;
   color: #FFFFFF;
@@ -704,7 +712,7 @@ transform: translate(0,0);
   width: 100%;
   height: 100%;
   background-color: rgba(47, 48, 58, 0.4);
-  transition: opaciti 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .modal {
